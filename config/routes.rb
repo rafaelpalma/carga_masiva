@@ -4,4 +4,5 @@ CargaMasiva::Application.routes.draw do
   
   get "/home", to: "pages#home", as: "home"
   
+  resource :bls
 end
