@@ -1,0 +1,12 @@
+# PostgreSQL
+#   Ensure the PostgreSQL gem is defined in your Gemfile
+#   gem 'pg'
+development: 
+  adapter: postgresql 
+  encoding: utf8 
+  database: carga_masiva_development 
+  username: ch4pd
+  host: localhost
+  pool: 5
+  port: 5432
+  password: ch4pd
