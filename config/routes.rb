@@ -10,4 +10,9 @@ CargaMasiva::Application.routes.draw do
       post :importar
     end
   end
+
+  resource :equipos
+  resource :entidades
+
+  resource :importaciones
 end

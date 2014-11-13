@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112210557) do
+ActiveRecord::Schema.define(version: 20141113194402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(version: 20141112210557) do
     t.date     "fecha_atraque"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "entidad_id"
+    t.integer  "entidad_embarcador_id"
+  end
+
+  create_table "entidades", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "equipos", force: true do |t|
+    t.string   "codigo"
+    t.integer  "tipo_equipo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "bl_id"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -35,5 +51,11 @@ ActiveRecord::Schema.define(version: 20141112210557) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "tipo_equipos", force: true do |t|
+    t.string   "codigo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

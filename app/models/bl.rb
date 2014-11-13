@@ -1,5 +1,9 @@
 class Bl < ActiveRecord::Base
 
+  belongs_to :consignatario, class_name: "Entidad"
+  belongs_to :embarcador, foreign_key: "entidad_embarcador_id", class_name: "Entidad"
+  has_many :equipos
+
   def self.importar(archivo)
     hoja_calculo = abrir_hoja(archivo)
     cabezera = hoja_calculo.row(1)
