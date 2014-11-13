@@ -30,3 +30,6 @@ end
 
 # PostgreSQL
 gem 'pg'
+
+# Import OpenOffice, Excel, Google spreadsheets, Excelx, LibreOffice, CSV
+gem 'roo'
