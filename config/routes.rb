@@ -7,6 +7,7 @@ CargaMasiva::Application.routes.draw do
   resource :bls do
     collection do 
       get :index
+      post :importar
     end
   end
 end
